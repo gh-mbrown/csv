@@ -16,9 +16,6 @@ const (
 	ILLEGAL = "ILLEGAL"
 	EOF     = "EOF"
 
-	// Ident
-	IDENT = "IDENT"
-
 	// Keywords
 	SELECT = "SELECT"
 	WHERE  = "WHERE"
@@ -62,7 +59,7 @@ func LookupKeyword(ident string) TokenType {
 		return t
 	}
 
-	return IDENT
+	return ILLEGAL
 }
 
 func LookupOperator(ident string) TokenType {
