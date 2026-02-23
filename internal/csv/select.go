@@ -11,7 +11,9 @@ func (s Select) Apply(records []Record) ([]Record, error) {
 		r := make(Record)
 
 		for _, col := range s.Columns {
-			r[col] = record[col]
+			if val, ok := record[col]; ok {
+				r[col] = val
+			}
 		}
 
 		result = append(result, r)

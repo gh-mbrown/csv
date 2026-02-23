@@ -2,6 +2,10 @@ package csvoperations
 
 import "log"
 
+type Stage interface {
+	Apply(records []Record) ([]Record, error)
+}
+
 type Pipeline struct {
 	Stages []Stage
 }
